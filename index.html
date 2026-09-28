@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Student Attendance Tracker</h1>
+    <p>Track student attendance easily</p>
+</header>
+
+<main>
+
+    <section class="form-box">
+        <h2>Add Student</h2>
+
+        <form id="attendanceForm">
+            <input type="hidden" id="editId">
+
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter name" required>
+
+            <label>Roll Number</label>
+            <input type="text" id="roll" placeholder="Enter roll number" required>
+
+            <label>Date</label>
+            <input type="date" id="date" required>
+
+            <label>Status</label>
+            <select id="status" required>
+                <option value="">Select Status</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit" id="submitBtn">Add Student</button>
+        </form>
+    </section>
+
+    <section class="summary">
+        <div>
+            <b id="total">0</b>
+            <span>Total Records</span>
+        </div>
+
+        <div>
+            <b id="present">0</b>
+            <span>Present</span>
+        </div>
+
+        <div>
+            <b id="absent">0</b>
+            <span>Absent</span>
+        </div>
+
+        <div>
+            <b id="percentage">0%</b>
+            <span>Attendance</span>
+        </div>
+    </section>
+
+    <section class="controls">
+        <input type="text" id="search" placeholder="Search student...">
+
+        <select id="filter">
+            <option value="All">All</option>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+
+        <input type="date" id="viewDate">
+    </section>
+
+    <section class="table-box">
+        <h2>Attendance Records</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Roll No.</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Percentage</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <p id="empty">No attendance records found.</p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
